@@ -1,5 +1,6 @@
 import React, { Fragment, useContext, useEffect } from 'react';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 
 const NavBar = ({ title, icon }) =>{
     return (
