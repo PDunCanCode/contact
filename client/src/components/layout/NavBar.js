@@ -43,24 +43,27 @@ const Navbar = ({ title, icon }) => {
       </li>
     </Fragment>
   );
-    return (
-        <div className="navbar bg-primary">
-            <h1>
-                <i className={icon} /> {title}
-            </h1>
 
-        </div>
-    )
-}
+  return (
+    <div className='navbar bg-primary'>
+      <h1>
+        <Link to='/'>
+          <i className={icon} /> {title}
+        </Link>
+      </h1>
+      <ul>{isAuthenticated ? authLinks : guestLinks}</ul>
+    </div>
+  );
+};
 
-NavBar.PropTypes = {
-    title: PropTypes.string.isRequired,
-    icon: PropTypes.string,
-}
+Navbar.propTypes = {
+  title: PropTypes.string.isRequired,
+  icon: PropTypes.string
+};
 
-NavBar.defaultProps = {
-    title: 'Contact',
-    icon: 'fas fa-id-card-alt'
-}
+Navbar.defaultProps = {
+  title: 'Contact Keeper',
+  icon: 'fas fa-id-card-alt'
+};
 
 export default Navbar;
